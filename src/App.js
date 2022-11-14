@@ -24,10 +24,32 @@
 //   )
 // }
 
-const App = (props) => {
-  const {counter} = props
+// const App = (props) => {
+//   const {counter} = props
+//   return (
+//     <div>{counter}</div>
+//   )
+// }
+
+import { useState } from 'react'
+
+const App = () => {
+  const [ counter, setCounter ] = useState(0)
+
+  const increaseByOne = () => setCounter(counter + 1)
+
+  const setToZero = () => setCounter(0)
+
   return (
-    <div>{counter}</div>
+    <div>
+      <div>{counter}</div>
+      <button onClick={increaseByOne}>
+        plus
+      </button>
+      <button onClick={setToZero}>
+        zero
+      </button>
+    </div>
   )
 }
 
